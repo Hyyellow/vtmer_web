@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="vtmer_rec_web02" />
         <module name="vtmer_recruit_web" />
       </profile>
     </annotationProcessing>

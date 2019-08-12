@@ -19,21 +19,27 @@ public class State {
     public Integer getId() {
         return id;
     }
+
     public void setId(Integer id) {
         this.id = id;
     }
+
     public String getFirstVolunteer() {
         return firstVolunteer;
     }
+
     public void setFirstVolunteer(String firstVolunteer) {
         this.firstVolunteer = firstVolunteer == null ? null : firstVolunteer.trim();
     }
+
     public String getSecondVolunteer() {
         return secondVolunteer;
     }
+
     public void setSecondVolunteer(String secondVolunteer) {
         this.secondVolunteer = secondVolunteer == null ? null : secondVolunteer.trim();
     }
+
     public Integer getUserId() {
         return userId;
     }

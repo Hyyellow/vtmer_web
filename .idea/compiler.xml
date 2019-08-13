@@ -9,6 +9,7 @@
         <module name="vtmer_rec_web02" />
         <module name="vtmer_recruit_web" />
         <module name="pushtest" />
+        <module name="vtmer_rec_web" />
       </profile>
     </annotationProcessing>
   </component>

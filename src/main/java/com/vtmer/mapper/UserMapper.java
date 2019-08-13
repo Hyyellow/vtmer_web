@@ -10,7 +10,7 @@ public interface UserMapper {
     /**
      * 添加用户
      */
-    boolean insert(User record);
+    boolean insert(User user);
 
     /**
      * 根据用户姓名查询用户

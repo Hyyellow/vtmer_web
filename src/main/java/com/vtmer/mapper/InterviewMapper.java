@@ -36,5 +36,7 @@ public interface InterviewMapper {
      */
     List<Interview> selectInterviewById(int id);
 
-    
+    User selectUserByName(String name);
+
+
 }

@@ -40,6 +40,7 @@
     second_assessment
     from interview
   </select>
+  <!--根据用户id查询面试评价-->
   <select id="selectInterviewById" resultMap="BaseResultMap" parameterType="Int">
     select interview.* from interview,user where #{id} = user.id
   </select>

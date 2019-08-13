@@ -14,16 +14,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean addUser(User user) {
-        User user1 = userMapper.selectOneByName(user.getUserName());
-        if (user1!=null){  // 如果根据姓名查询得到学生，更新学生信息
-            boolean b = userMapper.updateUserByName(user);
-            if (!b) { // 如果更新失败
-                return false;
-            }
-        }else {  // 插入学生信息
-            boolean flag = userMapper.insert(user);
-            return flag;
-        }
         return false;
     }
 }

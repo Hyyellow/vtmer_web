@@ -40,4 +40,7 @@
     second_assessment
     from interview
   </select>
+  <select id="selectInterviewById" resultMap="BaseResultMap" parameterType="Int">
+    select interview.* from interview,user where #{id} = user.id
+  </select>
 </mapper>

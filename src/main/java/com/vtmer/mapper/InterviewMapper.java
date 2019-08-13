@@ -1,8 +1,10 @@
 package com.vtmer.mapper;
 
 import com.vtmer.domain.Interview;
-import java.util.List;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface InterviewMapper {
     /**
      * 添加评价

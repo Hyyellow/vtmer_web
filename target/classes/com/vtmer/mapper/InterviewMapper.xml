@@ -48,6 +48,16 @@
   </select>
   <!-- 更新用户评价 -->
   <update id="update" parameterType="com.vtmer.domain.Interview">
-    update interversiew
+    update interversiew set
+    written_examination = #{writtenExamination},
+    first_interview = #{firstInterview},
+    second_interview = #{secondInterview},
+    first_assessment = #{firstAssessment},
+    second_assessment = #{secondAssessment},
+    where user_id = #{userId}
   </update>
+  <!-- 删除用户评价 -->
+  <delete id="delete" parameterType="int">
+    delete from interview where #{id} = user_id
+  </delete>
 </mapper>

@@ -33,5 +33,5 @@ public interface StateMapper {
      * 更新
      * @param record
      */
-    void update(State record);
+    boolean update(State record);
 }

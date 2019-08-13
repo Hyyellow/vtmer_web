@@ -18,8 +18,8 @@ public class InterviewController {
 
     @RequestMapping("/selectInterviewById")
     public String selectInterviewById(Model model,Integer id){
-        List<Interview> list = interviewService.selectInterviewById(id);
-        model.addAttribute("interviewList",list);
+        Interview interview= interviewService.selectInterviewById(id);
+        model.addAttribute("interviewList",interview);
         return "success";
     }
 }

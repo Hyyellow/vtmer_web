@@ -34,7 +34,7 @@
       #{userSex,jdbcType=VARCHAR}, #{userGrade,jdbcType=VARCHAR}, #{userCollege,jdbcType=VARCHAR}, 
       #{userMajor,jdbcType=VARCHAR}, #{userClass,jdbcType=VARCHAR}, #{userQq,jdbcType=INTEGER}, 
       #{userPhone,jdbcType=INTEGER}, #{userWechar,jdbcType=VARCHAR}, #{userFirstVolunteer,jdbcType=VARCHAR}, 
-      #{userSecondVolunteer,jdbcType=VARCHAR}, #{userSelfIntroduction,jdbcType=LONGVARCHAR},#{addTime,jdbcType=DATETIME}
+      #{userSecondVolunteer,jdbcType=VARCHAR}, #{userSelfIntroduction,jdbcType=LONGVARCHAR},#{addTime}
       )
   </insert>
   <!-- 根据用户姓名查询用户 -->

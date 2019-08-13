@@ -11,6 +11,8 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.UUID;
 
 @Controller
@@ -21,6 +23,10 @@ public class UserController {
 
     @RequestMapping("/addUser")
     public boolean addUser(@RequestBody User user, HttpServletRequest request, MultipartFile upload) throws IOException {
+
+
+        Date time = new Date();
+        user.setAddTime(time);
 
         // 先获取到要上传的文件目录
         String path = request.getSession().getServletContext().getRealPath("/uploads");

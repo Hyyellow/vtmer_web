@@ -13,7 +13,7 @@ public interface UserMapper {
      *
      * @mbg.generated Mon Aug 12 20:22:50 CST 2019
      */
-    boolean insert(User record);
+    boolean insert(User user);
 
     User selectOneByName(String username);
 

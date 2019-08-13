@@ -26,14 +26,14 @@
     insert into user (user_head_img, user_name,
       user_sex, user_grade, user_college, 
       user_major, user_class, user_qq, 
-      user_phone, user_wechar, user_first_volunteer, 
-      user_second_volunteer, user_self_introduction
+      user_phone, user_wechar, user_first_volunteer,
+      user_second_volunteer, user_self_introduction,user_addtime
       )
     values (#{userHeadImg,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
       #{userSex,jdbcType=VARCHAR}, #{userGrade,jdbcType=VARCHAR}, #{userCollege,jdbcType=VARCHAR}, 
       #{userMajor,jdbcType=VARCHAR}, #{userClass,jdbcType=VARCHAR}, #{userQq,jdbcType=INTEGER}, 
       #{userPhone,jdbcType=INTEGER}, #{userWechar,jdbcType=VARCHAR}, #{userFirstVolunteer,jdbcType=VARCHAR}, 
-      #{userSecondVolunteer,jdbcType=VARCHAR}, #{userSelfIntroduction,jdbcType=LONGVARCHAR}
+      #{userSecondVolunteer,jdbcType=VARCHAR}, #{userSelfIntroduction,jdbcType=LONGVARCHAR},#{addTime,jdbcType=DATETIME}
       )
   </insert>
 

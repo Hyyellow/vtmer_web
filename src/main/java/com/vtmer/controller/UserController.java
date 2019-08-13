@@ -18,7 +18,7 @@ import java.util.UUID;
 public class UserController {
 
     private UserService userService;
-
+/*
     @RequestMapping("/addUser")
     public boolean addUser(@RequestBody User user, HttpServletRequest request, MultipartFile upload) throws IOException {
 
@@ -40,6 +40,6 @@ public class UserController {
         user.setUserHeadImg(filename);
         boolean flag = userService.addUser(user);
         return flag;
-    }
+    }*/
 
 }

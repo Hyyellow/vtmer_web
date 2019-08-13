@@ -22,6 +22,7 @@
     <result column="user_second_volunteer" jdbcType="VARCHAR" property="userSecondVolunteer" />
     <result column="user_self_introduction" jdbcType="LONGVARCHAR" property="userSelfIntroduction" />
   </resultMap>
+  <!-- 添加用户 -->
   <insert id="insert" parameterType="com.vtmer.domain.User">
     insert into user (user_head_img, user_name,
       user_sex, user_grade, user_college, 
@@ -36,11 +37,15 @@
       #{userSecondVolunteer,jdbcType=VARCHAR}, #{userSelfIntroduction,jdbcType=LONGVARCHAR}
       )
   </insert>
-
+  <!-- 根据用户姓名查询用户 -->
   <select id="selectOneByName" resultMap="BaseResultMap">
     select * from user where user_name = #{userName}
   </select>
-
+  <!-- 根据用户Id查询用户 -->
+  <select id="selectUserById" resultMap="BaseResultMap" parameterType="int">
+    select * from user where id = #{id}
+  </select>
+  <!-- 根据用户姓名更新用户 -->
   <update id="updateUserByName">
     update user set
     user_head_img=#{userHeadImg},user_sex=#{userSex},user_grade=#{user_grade},
@@ -49,8 +54,7 @@
     user_second_volunteer=#{userSecondVolunteer},user_self_introduction=#{userSelfIntroduction}
     where user_name = #{userName}
   </update>
-
-
+  <!-- 查询所有用户 -->
   <select id="selectAll" resultMap="BaseResultMap">
     <!--
       WARNING - @mbg.generated

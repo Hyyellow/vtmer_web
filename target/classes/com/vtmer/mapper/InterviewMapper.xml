@@ -15,6 +15,7 @@
     <result column="first_assessment" jdbcType="LONGVARCHAR" property="firstAssessment" />
     <result column="second_assessment" jdbcType="LONGVARCHAR" property="secondAssessment" />
   </resultMap>
+  <!-- 添加用户 -->
   <insert id="insert" parameterType="com.vtmer.domain.Interview">
     <!--
       WARNING - @mbg.generated
@@ -30,6 +31,7 @@
       #{firstAssessment,jdbcType=LONGVARCHAR}, #{secondAssessment,jdbcType=LONGVARCHAR}
       )
   </insert>
+  <!-- 查询所有 -->
   <select id="selectAll" resultMap="BaseResultMap">
     <!--
       WARNING - @mbg.generated
@@ -40,4 +42,12 @@
     second_assessment
     from interview
   </select>
+  <!-- 根据用户Id查询评价-->
+  <select id="selectInterviewById" resultMap="BaseResultMap" parameterType="int">
+    select interview.* from interview where user_id = #{id}
+  </select>
+  <!-- 更新用户评价 -->
+  <update id="update" parameterType="com.vtmer.domain.Interview">
+    update interversiew
+  </update>
 </mapper>

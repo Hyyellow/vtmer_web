@@ -31,14 +31,14 @@ public class LogServiceImpl implements LogService {
         return null;
     }
 
-    /**
-     * 根据管理员id查看操作记录
-     * @param admiId
-     * @return
-     */
-    @Override
-    public List<Log> selectLogByAdmiId(Integer admiId) {
-        return logMapper.selectLogByAdmiId(admiId);
-    }
+//    /**
+//     * 根据管理员id查看操作记录
+//     * @param admiId
+//     * @return
+//     */
+//    @Override
+//    public List<Log> selectLogByAdmiId(Integer admiId) {
+//
+//    }
 
 }

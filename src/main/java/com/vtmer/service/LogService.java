@@ -12,5 +12,5 @@ public interface LogService {
     List<Log> selectAll();
 
     // 根据管理员id查看操作记录
-    List<Log> selectLogByAdmiId(Integer admiId);
+    // List<Log> selectLogByAdmiId(Integer admiId);
 }

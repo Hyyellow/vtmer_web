@@ -12,7 +12,13 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserMapper userMapper;
 
-/*    @Override*/
+    @Override
+    public boolean delete(User record) {
+        boolean flag = userMapper.delete()
+        return false;
+    }
+
+    /*    @Override*/
 /*    public boolean addUser(User user) {
         User user1 = userMapper.selectOneByName(user.getUserName());
         if (user1!=null){  // 如果根据姓名查询得到学生，更新学生信息

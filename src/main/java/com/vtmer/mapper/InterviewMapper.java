@@ -8,8 +8,9 @@ import java.util.List;
 public interface InterviewMapper {
     /**
      * 添加评价
+     * @return
      */
-    int insert(Interview record);
+    boolean insert(Interview record);
 
     /**
      * 查询所有评价

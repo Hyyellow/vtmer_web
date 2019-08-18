@@ -3,6 +3,7 @@ package com.vtmer.service.impl;
 import com.vtmer.domain.Interview;
 import com.vtmer.domain.User;
 import com.vtmer.mapper.InterviewMapper;
+import com.vtmer.mapper.LogMapper;
 import com.vtmer.mapper.UserMapper;
 import com.vtmer.service.InterviewService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,16 +16,7 @@ public class InterviewServiceImpl implements InterviewService {
     @Autowired
     private InterviewMapper interviewMapper;
     private UserMapper userMapper;
-
-    /**
-     * 添加评价
-     * @param record
-     * @return
-     */
-    @Override
-    public int insert(Interview record) {
-        return 0;
-    }
+    private LogMapper logMapper;
 
     /**
      * 查询所有
@@ -35,44 +27,91 @@ public class InterviewServiceImpl implements InterviewService {
         return null;
     }
 
-    /**
-     * 根据用户Id查询评价
-     * @param id
-     * @return
-     */
     @Override
-    public Interview selectInterviewById(int id) {
-        return interviewMapper.selectInterviewById(id);
+    public Interview selectInterviewById(Integer id) {
+        return null;
     }
 
     /**
-     * 根据用户id更新评价
+     * 添加评价
      * @param record
-     * @param id
      * @return
      */
     @Override
-    public boolean update(Interview record , int id) {
-        User user = userMapper.selectUserById(id);
-        if(user != null){
-            boolean flag = interviewMapper.update(record);
-            return  flag;
+    public boolean insert(Interview record) {
+        boolean flag = interviewMapper.insert(record);
+        return flag;
+    }
+
+    /**
+     * 添加评价并记录添加操作
+     * @param record
+     * @return
+     */
+    @Override
+    public boolean insertFlag(Interview record, Integer userId, Integer adminId) {
+        boolean flag = interviewMapper.insert(record);
+        if(flag){
+            flag = logMapper.insertAddInterview(userId, adminId);
+            return flag;
         }
         return false;
     }
 
     /**
-     * 根据用户id删除评价
+     * 更新评价
+     * @param record
+     * @return
+     */
+    @Override
+    public boolean update(Interview record) {
+        boolean flag = interviewMapper.update(record);
+        return flag;
+    }
+
+    /**
+     * 更新评价并记录更新操作
+     * @param record
+     * @param userId
+     * @param adminId
+     * @return
+     */
+    @Override
+    public boolean updateFlag(Interview record, Integer userId, Integer adminId) {
+        boolean flag = interviewMapper.update(record);
+        if(flag){
+            logMapper.insertUpdateInterview(userId, adminId);
+            return flag;
+        }
+        return flag;
+    }
+
+    /**
+     * 删除评价
      * @param id
      * @return
      */
     @Override
-    public boolean delete(int id) {
-        User user = userMapper.selectUserById(id);
-        if(user != null){
-            boolean flag = interviewMapper.delete(id);
-            return  flag;
+    public boolean delete(Integer id) {
+        boolean flag = interviewMapper.delete(id);
+        return flag;
+    }
+
+    /**
+     * 删除评价同时记录删除操作
+     * @param id
+     * @param userId
+     * @param adminId
+     * @return
+     */
+    @Override
+    public boolean deleteFlag(Integer id, Integer userId, Integer adminId) {
+        boolean flag = interviewMapper.delete(id);
+        if(flag){
+            flag = logMapper.insertDeleteInterview(userId, adminId);
+            return flag;
         }
         return false;
     }
+
 }

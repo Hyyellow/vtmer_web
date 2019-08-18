@@ -12,6 +12,7 @@
 </head>
 <body>
 <a href="user/selectAll">查找全部</a>
+<a href="/log/selectLogByAdmiId">查找全部</a>
 <form action="interview/selectInterviewById" method="post">
     用户id：<input type="text" name="id"/><br/>
     <input type="submit" value="保存"/><br/>

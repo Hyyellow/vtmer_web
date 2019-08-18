@@ -31,4 +31,9 @@
     select id, username, group
     from administrator
   </select>
+  <!-- 根据管理员id查询管理员信息 -->
+  <select id="selectAdmiById" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+    select id, username, group
+    from administrator where id = #{id}
+  </select>
 </mapper>

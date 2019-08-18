@@ -2,6 +2,7 @@ package com.vtmer.service;
 
 import com.vtmer.domain.Log;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public interface LogService {
@@ -12,5 +13,8 @@ public interface LogService {
     List<Log> selectAll();
 
     // 根据管理员id查看操作记录
-    List<Log> selectLogByAdmiId(Integer admiId);
+    List<Object> selectLogByAdmiId(Integer admiId);
+
+    // 根据用户ID查看被操作记录
+    List<Log> selectLogByUserId(Integer userId);
 }

@@ -23,6 +23,8 @@ public interface AdministratorMapper {
      */
     List<Administrator> selectAll();
 
+    Administrator selectAdmiById(Integer id);
+
     /**
      * 删除
      * @param id

@@ -44,7 +44,9 @@
   </select>
   <!-- 根据用户Id查询评价-->
   <select id="selectInterviewById" resultMap="BaseResultMap" parameterType="int">
-    select interview.* from interview where user_id = #{id}
+    select id, user_id, written_examination, first_interview, second_interview, first_assessment,
+    second_assessment
+    from interview where user_id = #{id}
   </select>
   <!-- 更新用户评价 -->
   <update id="update" parameterType="com.vtmer.domain.Interview">

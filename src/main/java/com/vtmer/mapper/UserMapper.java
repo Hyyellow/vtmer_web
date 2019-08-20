@@ -37,4 +37,13 @@ public interface UserMapper {
      * 查询所有用户
      */
     List<User> selectAll();
+
+//  查找第一志愿
+    String selectFirst();
+
+//  查找第二志愿
+    String selectSecond();
+
+//  第一志愿和第二志愿调换
+    boolean swopVolunteer();
 }

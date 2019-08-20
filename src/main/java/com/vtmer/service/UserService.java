@@ -9,6 +9,6 @@ public interface UserService {
     // 删除用户
     boolean delete(User record);
 
-   
+
 
 }

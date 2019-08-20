@@ -66,4 +66,16 @@
     user_self_introduction
     from usersss
   </select>
+<!--  查找第一志愿 -->
+  <select id="selectFirst" resultMap="String">
+    select user_first_volunteer from user where id = #{userId}
+  </select>
+<!--  查找第二志愿 -->
+  <select id="selectSecond" resultMap="String">
+    select user_second_volunteer from user where id = #{userId}
+  </select>
+<!--  第一志愿和第二志愿调换 -->
+  <update id="swopVolunteer">
+    update user set user_first_volunteer = #{firstVolunteer}, user_second_volunteer = #{secondVolunteer} where id = #{userId}  
+  </update>
 </mapper>

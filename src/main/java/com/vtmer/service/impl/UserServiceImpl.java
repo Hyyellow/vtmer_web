@@ -1,6 +1,7 @@
 package com.vtmer.service.impl;
 
 import com.vtmer.domain.User;
+import com.vtmer.mapper.StateMapper;
 import com.vtmer.mapper.UserMapper;
 import com.vtmer.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +12,25 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private StateMapper stateMapper;
+
+/*    @Override*/
+/*    public boolean delete(User record) {
+        boolean flag = userMapper.delete();
+        return false;
+    }*/
 
     @Override
-    public boolean delete(User record) {
-        boolean flag = userMapper.delete()
+    public boolean swopVolunteer(int userId) {
+        String first = userMapper.selectFirst(userId);
+        String second = userMapper.selectSecond(userId);
+        String state = stateMapper.selectSecond(userId);
+//      0表示不录取状态；只有在第二志愿未淘汰此成员情况下可移组至第二志愿
+        if (state != "0") {
+            boolean flag = userMapper.swopVolunteer(first,second);
+            return flag;
+        }
         return false;
     }
 

@@ -76,6 +76,6 @@
   </select>
 <!--  第一志愿和第二志愿调换 -->
   <update id="swopVolunteer">
-    update user set user_first_volunteer = #{firstVolunteer}, user_second_volunteer = #{secondVolunteer} where id = #{userId}  
+    update user set user_first_volunteer = #{firstVolunteer}, user_second_volunteer = #{secondVolunteer} where id = #{userId}     
   </update>
 </mapper>

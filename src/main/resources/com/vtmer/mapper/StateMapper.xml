@@ -32,4 +32,8 @@
     select id, first_volunteer, second_volunteer, user_id
     from state
   </select>
+  <!-- 查询第二志愿状态 -->
+  <select id="selectSecond" resultMap="String">
+    select second_volunteer from state where user_id = #{userId}
+  </select>
 </mapper>

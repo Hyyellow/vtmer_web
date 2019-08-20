@@ -39,11 +39,11 @@ public interface UserMapper {
     List<User> selectAll();
 
 //  查找第一志愿
-    String selectFirst();
+    String selectFirst(int userId);
 
 //  查找第二志愿
-    String selectSecond();
+    String selectSecond(int userId);
 
 //  第一志愿和第二志愿调换
-    boolean swopVolunteer();
+    boolean swopVolunteer(String first, String second);
 }

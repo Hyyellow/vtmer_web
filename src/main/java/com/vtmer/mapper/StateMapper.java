@@ -28,4 +28,8 @@ public interface StateMapper {
      * @param record
      */
     boolean update(State record);
+
+//    查询第二志愿录取状态
+    String selectSecond(int userId);
+
 }
